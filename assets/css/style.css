@@ -1,0 +1,142 @@
+/* ####################### Defaults #########################*/
+html {
+    height: 100%;
+}
+
+
+body {
+    margin: 0;
+    background: url("../images/dark-mosaic.png");
+    background-size: 200px 200px;
+    background-color: rgba(248, 248, 248, 0.01);
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+
+article {
+   background: #FFFFFF;
+   width: 60%;
+   padding: 2rem;
+   display: block;
+   margin: 8rem auto; 
+   
+}
+
+h1 {
+    padding-bottom: 1.2rem;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: rgba(255, 0, 0, 0.575);
+    margin-top: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
+/* #################### Custom Styles ######################*/
+article p, ul { 
+    font-family: 'Noto Sans', sans-serif;
+}
+
+input {
+    
+}
+
+input.message {
+    width: 70%;
+    height: 80px;
+}
+
+img.self {
+    float: left;
+    margin: .5rem 1rem .5rem 0rem;
+}
+
+ul.aboutMe li{
+    padding: .3rem;
+    margin-left: 11rem;
+}
+
+footer {  
+    background-color: rgba(43, 43, 226, 0.95);
+    grid-row: 4 / 5;
+    display: grid;
+    grid-template: 80px 50px / 1fr 2fr 1fr;
+    width: 100%;
+}
+
+footer ul {
+    grid-column: 2 / 3;
+    grid-row: 1 / 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 0;
+}
+
+footer ul li {
+    list-style: none;
+    padding: 2rem;
+}
+
+footer ul li:nth-child(2) { 
+    border-right: solid 1px grey;
+    border-left: solid 1px grey;
+}
+
+footer img {
+    grid-column: 2 /3;
+    grid-row: 2 / 2;
+    margin: auto;
+}
+
+/* ################### NavBar ###########################*/
+nav {
+    width: 100%;
+    margin: 0;
+    background-color: #fff;
+}
+
+nav ul {
+    overflow: hidden;
+    margin: 0 15%;
+    padding: 0;
+}
+
+ul.topnav li {
+    list-style: none;
+    float: left;
+}
+
+ul.topnav li.left {
+    float: left;
+    font-size: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    padding: 1rem;
+    border-bottom: 3px solid red;
+}
+
+ul.topnav li.right {
+    float: right;
+    font-size: 1.2rem;
+    font-family: 'Noto Sans', sans-serif;
+    padding: 0 1rem;
+    margin: 1.4rem 0;
+}
+
+ul.topnav li.right:nth-child(3) { 
+    border-right: solid 1px red;
+    border-left: solid 1px red;
+}
+
+ul.topnav li a {
+    display: block;
+    text-decoration: none;
+    color: #666;
+}
+
+ul.topnav li a:hover {
+    background-color: #eaec45;
+    color: #fff;
+}
