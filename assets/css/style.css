@@ -3,6 +3,12 @@ html {
     height: 100%;
 }
 
+:root {
+    --red: rgba(255, 0, 0, 0.575);
+    --yellow: #ffd300;
+    --t-yellow: #ffd5006e;
+    --blue: rgba(43, 43, 226, 0.95);
+}
 
 body {
     margin: 0;
@@ -14,41 +20,30 @@ body {
     grid-template-rows: 1fr auto;
 }
 
-article {
-   background: #FFFFFF;
-   width: 60%;
-   padding: 2rem;
-   display: block;
-   margin: 8rem auto; 
-   
-}
-
 h1 {
     padding-bottom: 1.2rem;
     border-bottom-style: solid;
     border-bottom-width: 2px;
-    border-bottom-color: rgba(255, 0, 0, 0.575);
+    border-bottom-color: var(--red);
     margin-top: 0;
     font-family: 'Montserrat', sans-serif;
 }
 
-
-
-/* #################### Custom Styles ######################*/
 article p, ul { 
     font-family: 'Noto Sans', sans-serif;
 }
 
-input {
-    
-}
+/* #################### Index (About Me)######################*/
 
-input.message {
-    width: 70%;
-    height: 80px;
-}
+article {
+    background: #FFFFFF;
+    width: 60%;
+    padding: 2rem;
+    display: block;
+    margin: 8rem auto;   
+ }
 
-img.self {
+ img.self {
     float: left;
     margin: .5rem 1rem .5rem 0rem;
 }
@@ -57,38 +52,59 @@ ul.aboutMe li{
     padding: .3rem;
     margin-left: 11rem;
 }
-
-footer {  
-    background-color: rgba(43, 43, 226, 0.95);
-    grid-row: 4 / 5;
+/* #################### Portfolio ###################### */
+.gridBox {
     display: grid;
-    grid-template: 80px 50px / 1fr 2fr 1fr;
+    grid-gap: 6px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 200px;
+}
+    
+.imgBox {
+    position: static;
+}
+
+ .imgBox img {
     width: 100%;
-}
+    height: 100%;
+    object-fit: cover;
+ }
 
-footer ul {
-    grid-column: 2 / 3;
-    grid-row: 1 / 1;
+.imgBox h2 {
+    background: var(--t-yellow);
+    position: relative;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    margin: 0;
+    justify-content: left;
+    align-items: flex-end;
+    overflow: hidden;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 30px;
+    z-index: 0;
+    font-family: 'Noto Sans', sans-serif;
 }
-
-footer ul li {
-    list-style: none;
+/* #################### Contact Me ###################### */
+form {
+    background: #FFFFFF;
+    width: 60%;
     padding: 2rem;
+    display: block;
+    margin: 8rem auto; 
+}
+input {
+    width: 100%;
+    line-height: 1.5rem;
+    border: 1px solid rgba(128, 128, 128, 0.459);
+    border-radius: 4px;
 }
 
-footer ul li:nth-child(2) { 
-    border-right: solid 1px grey;
-    border-left: solid 1px grey;
+input.message {
+    width: 100%;
+    height: 100px;
 }
 
-footer img {
-    grid-column: 2 /3;
-    grid-row: 2 / 2;
-    margin: auto;
+aside {
+    
 }
 
 /* ################### NavBar ###########################*/
@@ -114,7 +130,7 @@ ul.topnav li.left {
     font-size: 2rem;
     font-family: 'Montserrat', sans-serif;
     padding: 1rem;
-    border-bottom: 3px solid red;
+    border-bottom: 3px solid var(--red);
 }
 
 ul.topnav li.right {
@@ -126,17 +142,53 @@ ul.topnav li.right {
 }
 
 ul.topnav li.right:nth-child(3) { 
-    border-right: solid 1px red;
-    border-left: solid 1px red;
+    border-right: solid 1px var(--red);
+    border-left: solid 1px var(--red);
 }
 
 ul.topnav li a {
     display: block;
     text-decoration: none;
     color: #666;
+    transition: 1.8s ease;
 }
 
 ul.topnav li a:hover {
-    background-color: #eaec45;
+    background-color: var(--yellow);
     color: #fff;
+}
+
+/* ################### Footer ################### */
+footer {  
+    background-color: var(--blue);
+    display: grid;
+    grid-template: 80px 50px / 1fr 2fr 1fr;
+    grid-row: 4 / 5;
+    width: 100%;
+    justify-content: space-between;
+}
+
+footer ul {
+    grid-column: 2 / 3;
+    grid-row: 1 / 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 0;
+}
+
+footer ul li {
+    list-style: none;
+    padding: 2rem;
+}
+
+footer ul li:nth-child(2) { 
+    border-right: solid 1px grey;
+    border-left: solid 1px grey;
+}
+
+footer img {
+    grid-column: 2 /3;
+    grid-row: 2 / 2;
+    margin: auto;
 }
